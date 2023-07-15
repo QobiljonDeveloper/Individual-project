@@ -80,7 +80,7 @@ console.log(flags[3])
 function getDefaultFlag() {
   language.innerHTML = flags[3].outerHTML
   flags.forEach(flag => {
-    flag.style.listStyle = 'none'
+    flag.style.list = 'none'
   })
 }
 
