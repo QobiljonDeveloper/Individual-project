@@ -5,6 +5,8 @@ const verticalSwiper__top__wrapper = document.querySelector('.vertical-swiper-to
 const vertialSwiper__bottom__wrapper = document.querySelector('.vertical-swiper-bottom .swiper-wrapper')
 const locationUser = document.querySelector('#location-user')
 var language = document.querySelector('#flag');
+var flags = document.querySelectorAll('#flag-elements');
+console.log(flags)
 console.log(language);
 
 
@@ -73,4 +75,13 @@ const resGeolocation = await fetch(`https://ipgeolocation.abstractapi.com/v1/?ap
 
 var countryCode = 'uz'; // Replace with the desired country code
 var apiUrl = `https://flagcdn.com/${countryCode.toLowerCase()}.svg`;
+console.log(flags[3])
+// flags in navbar
+function getDefaultFlag() {
+  language.innerHTML = flags[3].outerHTML
+  flags.forEach(flag => {
+    flag.style.listStyle = 'none'
+  })
+}
 
+getDefaultFlag()
